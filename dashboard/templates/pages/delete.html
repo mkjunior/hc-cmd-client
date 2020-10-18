@@ -1,0 +1,36 @@
+{% extends "basedash.html" %}
+
+{% load static %}
+
+
+{% block title %} Supprimer {% endblock %}
+
+
+{% block link_css %}
+<link rel="stylesheet" href="{% static 'css/delete.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<div class="row">
+    <div class="col-md-6">
+        <div class="card card-body">
+
+            <p>Souhaitez-vous vraiment supprimer "{{item.produit}}"</p>
+
+            <form action="{% url 'dashboard:supprimer_cmd' item.id %}" method="POST">
+                {% csrf_token %}
+                
+                <a class="btn btn-sm btn-warning" href="{% url 'dashboard:dashboard' %}">Annuler</a>
+
+                <input type="submit" name="Supprimer">
+            </form>
+
+        </div>
+    </div>
+</div>
+
+
+
+
+{% endblock %}

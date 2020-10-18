@@ -1,0 +1,621 @@
+{% extends 'baseshop.html' %}
+
+{% load static %}
+
+
+{% block title %} Magasin et favoris {% endblock %}
+
+
+{% block link_css %}
+<link rel="stylesheet" href="{% static 'css/magasin.css' %}">
+<link rel='stylesheet' href='https://sachinchoolur.github.io/lightslider/dist/css/lightslider.css'>
+{% endblock %}
+
+
+
+
+
+
+{% block contenu %}
+
+<div class="container-fluid mt-2 mb-3">
+    <div class="row no-gutters">
+        <div class="col-md-5 pr-2">
+            <div class="card">
+                <div class="demo">
+                    <ul id="lightSlider">
+                       <!-- <li data-thumb="https://i.imgur.com/KZpuufK.jpg"> <img src="https://i.imgur.com/KZpuufK.jpg" /> </li>
+                        <li data-thumb="https://i.imgur.com/GwiUmQA.jpg"> <img src="https://i.imgur.com/GwiUmQA.jpg" /> </li>
+                        <li data-thumb="https://i.imgur.com/DhKkTrG.jpg"> <img src="https://i.imgur.com/DhKkTrG.jpg" /> </li>
+                        <li data-thumb="https://i.imgur.com/kYWqL7k.jpg"> <img src="https://i.imgur.com/kYWqL7k.jpg" /> </li>
+                        <li data-thumb="https://i.imgur.com/c9uUysL.jpg"> <img src="https://i.imgur.com/c9uUysL.jpg" /> </li>
+                        <li data-thumb="https://i.imgur.com/KZpuufK.jpg"> <img src="https://i.imgur.com/KZpuufK.jpg" /> </li>
+                        <li data-thumb="https://i.imgur.com/GwiUmQA.jpg"> <img src="https://i.imgur.com/GwiUmQA.jpg" /> </li>
+                        <li data-thumb="https://i.imgur.com/DhKkTrG.jpg"> <img src="https://i.imgur.com/DhKkTrG.jpg" /> </li>
+                        <li data-thumb="https://i.imgur.com/kYWqL7k.jpg"> <img src="https://i.imgur.com/kYWqL7k.jpg" /> </li>
+                        <li data-thumb="https://i.imgur.com/c9uUysL.jpg"> <img src="https://i.imgur.com/c9uUysL.jpg" /> </li>
+                        <li data-thumb="https://i.imgur.com/KZpuufK.jpg"> <img src="https://i.imgur.com/KZpuufK.jpg" /> </li>
+                        <li data-thumb="https://i.imgur.com/GwiUmQA.jpg"> <img src="https://i.imgur.com/GwiUmQA.jpg" /> </li>
+                        <li data-thumb="https://i.imgur.com/DhKkTrG.jpg"> <img src="https://i.imgur.com/DhKkTrG.jpg" /> </li>
+                        <li data-thumb="https://i.imgur.com/kYWqL7k.jpg"> <img src="https://i.imgur.com/kYWqL7k.jpg" /> </li>
+                       --> <li data-thumb="https://i.imgur.com/c9uUysL.jpg"> <img src="https://i.imgur.com/c9uUysL.jpg" /> </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="card mt-2">
+                <h6>Commentaires</h6>
+                <div class="d-flex flex-row">
+                    <div class="stars"> 
+                        <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> 
+                    </div> 
+                    <span class="ml-1 font-weight-bold">4.6</span>
+                </div>
+                <hr>
+                <div class="badges"> 
+                    <span class="badge bg-dark ">Tous (230)</span> 
+                    <span class="badge bg-warning"> 
+                        <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> 
+                        <span class="ml-1">2,123</span> 
+                    </span> 
+                </div>
+                <hr>
+                <div class="comment-section">
+                    <a href="#">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="d-flex flex-row align-items-center"> <img src="https://i.imgur.com/o5uMfKo.jpg" class="rounded-circle profile-image">
+                                <div class="d-flex flex-column ml-1 comment-profile">
+                                    <div class="comment-ratings"> 
+                                        <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> 
+                                    </div> 
+                                    <span class="username">Lori Benneth</span>
+                                </div>
+                            </div>
+                            <div class="date"> <span class="text-muted">2 Mai</span> </div>
+                        </div>
+                        <div class="commentaire"> <span class="text-muted">Très bons produits...</span> </div>
+                    </a>
+                    
+                    <hr>
+
+                    <a href="#">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="d-flex flex-row align-items-center"> <img src="https://i.imgur.com/tmdHXOY.jpg" class="rounded-circle profile-image">
+                                <div class="d-flex flex-column ml-1 comment-profile">
+                                    <div class="comment-ratings"> 
+                                        <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> 
+                                    </div> 
+                                    <span class="username">Timona Simaung</span>
+                                </div>
+                            </div>
+                            <div class="date"> <span class="text-muted">12 Mai</span> </div>
+                        </div>
+                        <div class="commentaire"> <span class="text-muted">Votre boutique est merveilleuse :-*</span> </div>
+                    </a>
+                    <div class="lireplus">
+                        <a href="#"><p>Lire plus ...</p></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-7">
+            <div class="card">                
+                <h4 class="font-weight-bold">PREMIUM</h4>
+                <div class="d-flex flex-row align-items-center">
+                    <div class="p-ratings"> 
+                        <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> 
+                    </div> 
+                    <span class="ml-1">4.0</span>
+                </div>
+                <div class="about"> <span class="font-weight-bold">BATIRAMA CONFORT - AKWA</span>
+                    <h5 class="font-weight-bold">Abonnés 3,444</h5>
+                </div>
+                <div class="buttons"> 
+                    <button class="btn btn-outline-warning btn-long cart">Recommander</button> 
+                    <button class="btn btn-warning btn-long buy">Partager <i class="fas fa-share-alt"></i></button> 
+                    <button class="btn btn-light wishlist"> <i class="fa fa-heart"></i> </button> </div>
+                <hr>
+                <div class="product-description">
+                    <!--
+                    <div><span class="font-weight-bold">Color:</span><span> blue</span></div>
+                    <div class="my-color"> 
+                        <label class="radio"> 
+                            <input type="radio" name="gender" value="MALE" checked> 
+                            <span class="red"></span> 
+                        </label> 
+                        <label class="radio"> 
+                            <input type="radio" name="gender" value="FEMALE"> 
+                            <span class="blue"></span> 
+                        </label> 
+                        <label class="radio"> 
+                            <input type="radio" name="gender" value="FEMALE"> 
+                            <span class="green"></span> 
+                        </label> 
+                        <label class="radio"> 
+                            <input type="radio" name="gender" value="FEMALE"> 
+                            <span class="orange"></span> 
+                        </label> 
+                    </div>
+                    -->
+                    <div class="d-flex flex-row align-items-center">                         
+                        <span class="ml-1"><i class="fa fa-clock-o" aria-hidden="true"></i>Livraison express en 2 heures</span> 
+                    </div>
+                    <div class="mt-2"> <span class="font-weight-bold">Description</span>
+                        <p>La collaboration minimaliste comprend des chaises, des éclairages, des étagères, 
+                        des canapés, des bureaux et divers accessoires pour la maison, tous offrant forme et 
+                        fonction au même point.Nous utilisons des pinces à haute résistance et des techniques 
+                        de menuiserie spécialement conçues pour les lits en bois d'ingénierie. Ergo, pas de 
+                        craquements ennuyeux - et vous pouvez dormir comme un bébé, jusqu'à l'âge adulte!
+                        </p>
+                        <div class="bullets">
+                            <div class="d-flex align-items-center"> <span class="dot"></span> <span class="bullet-text">Meilleur en qualité</span> </div>
+                            <div class="d-flex align-items-center"> <span class="dot"></span> <span class="bullet-text">Menuiserie anti-craquement</span> </div>
+                            <div class="d-flex align-items-center"> <span class="dot"></span> <span class="bullet-text">Surfaces stratifiées robustes</span> </div>
+                            <div class="d-flex align-items-center"> <span class="dot"></span> <span class="bullet-text">Conception conviviale pour la réinstallation</span> </div>
+                            <div class="d-flex align-items-center"> <span class="dot"></span> <span class="bullet-text">Haute brillance, style élevé</span> </div>
+                            <div class="d-flex align-items-center"> <span class="dot"></span> <span class="bullet-text">Stockage hydraulique facile d'accès</span> </div>
+                        </div>
+                    </div>
+                    <!--
+                    <div class="mt-2"> <span class="font-weight-bold">Store</span> </div>
+                    <div class="d-flex flex-row align-items-center"> <img src="https://i.imgur.com/N2fYgvD.png" class="rounded-circle store-image">
+                        <div class="d-flex flex-column ml-1 comment-profile">
+                            <div class="comment-ratings"> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> </div> <span class="username">Rare Boutique</span> <small class="followers">25K Followers</small>
+                        </div>
+                    </div>
+                    -->
+                </div>
+            </div>
+            <div class="card mt-2"> <span>Boutiques similaires:</span>
+                <div class="similar-products mt-2 d-flex flex-row">
+                    <div class="card border p-1" style="width: 9rem;margin-right: 3px;"> 
+                        <a href="#"><img src="https://i.imgur.com/KZpuufK.jpg" class="card-img-top" alt="..."> </a>                                       
+                        <div class="card-body">
+                            <h6 class="card-title"><i class="fa fa-heart"></i> 1,982</h6>
+                        </div>                    
+                    </div>
+                    <div class="card border p-1" style="width: 9rem;margin-right: 3px;"> 
+                        <a href="#"><img src="https://i.imgur.com/GwiUmQA.jpg" class="card-img-top" alt="..."></a>                        
+                        <div class="card-body">
+                            <h6 class="card-title"><i class="fa fa-heart"></i> 1,622</h6>
+                        </div>
+                    </div>
+                    <div class="card border p-1" style="width: 9rem;margin-right: 3px;"> 
+                        <a href="#"><img src="https://i.imgur.com/c9uUysL.jpg" class="card-img-top" alt="..."></a>
+                        <div class="card-body">
+                            <h6 class="card-title"><i class="fa fa-heart"></i> 12,910</h6>
+                        </div>
+                    </div>
+                    <div class="card border p-1" style="width: 9rem;margin-right: 3px;"> 
+                        <a href="#"><img src="https://i.imgur.com/kYWqL7k.jpg" class="card-img-top" alt="..."></a>
+                        <div class="card-body">
+                            <h6 class="card-title"><i class="fa fa-heart"></i> 39,327</h6>
+                        </div>
+                    </div>
+                    <div class="card border p-1" style="width: 9rem;"> 
+                        <a href="#"><img src="https://i.imgur.com/DhKkTrG.jpg" class="card-img-top" alt="..."></a>
+                        <div class="card-body">
+                            <h6 class="card-title"><i class="fa fa-heart"></i> 5,999</h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- PORTOFOLIO -->
+<div class="container">
+
+    <div class="row">
+        <div class="col-md-12 col-xs-6">
+
+            <!--thumbnail carousel 1-->
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 col-sm-8 col-xs-4">
+                        <h3>Flowers</h3>
+                        <div id="nail" class="carousel2 carousel slide" data-ride="carousel" data-interval="0">
+                            <!-- Carousel indicators -->
+                            <ol class="carousel-indicators">
+                                <li data-target="nail" data-slide-to="0" class="active"></li>
+                                <li data-target="#nail" data-slide-to="1"></li>
+                                <li data-target="#nail" data-slide-to="2"></li>
+                                <li data-target="#nail" data-slide-to="3"></li>
+                            </ol>
+                            <!--  carousel items -->
+                            <div class="carousel-inner">
+                                <div class="item carousel-item active">
+                                    <div class="row">
+                                        <div class="col-sm-3">
+                                            <a href="#" class="">
+                                                <img src="https://images.pexels.com/photos/459059/pexels-photo-459059.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" class="nail-img img-responsive img-fluid" alt="flower"></a>
+                                        </div>
+                                        <div class="hidden-xs col-sm-3">
+                                            <a href="#" class="">
+                                                <img src="https://images.pexels.com/photos/40722/cosmea-flower-blossom-bloom-40722.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="flower" class="nail-img img-responsive img-fluid">
+                                            </a>
+                                        </div>
+                                        <div class="hidden-xs col-sm-3">
+                                            <a href="#" class="">
+                                                <img src="https://images.pexels.com/photos/55748/flower-blossom-bloom-blue-55748.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="flower" class="nail-img img-responsive img-fluid">
+                                            </a>
+                                        </div>
+                                        <div class="hidden-xs col-sm-3">
+                                            <a href="#" class="">
+                                                <img src="https://images.pexels.com/photos/40722/cosmea-flower-blossom-bloom-40722.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="flower" class="nail-img img-responsive img-fluid">
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="item carousel-item">
+                                    <div class="row">
+                                        <div class="col-sm-4">
+                                            <a href="#">
+                                                <img src="https://images.pexels.com/photos/133081/pexels-photo-133081.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" class="nail-img img-responsive img-fluid" alt="flower">
+                                            </a>
+                                        </div>
+                                        <div class="hidden-xs col-sm-4">
+                                            <a href="#">
+                                                <img src="https://images.pexels.com/photos/286763/pexels-photo-286763.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" class="nail-img img-responsive img-fluid" alt="flower">
+                                            </a>
+                                        </div>
+                                        <div class="hidden-xs col-sm-4">
+
+                                            <a href="#"><img
+                                                    src="https://images.pexels.com/photos/46192/rose-the-wild-flower-powder-46192.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+                                                    class="nail-img img-responsive img-fluid" alt="flower"></a>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item carousel-item">
+                                    <div class="row">
+                                        <div class="col-sm-4">
+
+                                            <a href="#"><img
+                                                    src="https://images.pexels.com/photos/133079/pexels-photo-133079.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+                                                    class="nail-img img-responsive img-fluid" style="width: 100%;"
+                                                    alt="flower"></a>
+
+                                        </div>
+                                        <div class="hidden-xs col-sm-4">
+
+                                            <a href="#"><img
+                                                    src="https://images.pexels.com/photos/239659/pexels-photo-239659.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+                                                    class="nail-img img-responsive img-fluid" alt="flower"></a>
+
+                                        </div>
+                                        <div class="hidden-xs col-sm-4">
+
+                                            <a href="#"><img
+                                                    src="https://images.pexels.com/photos/156203/pexels-photo-156203.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+                                                    class="nail-img img-responsive img-fluid" alt="flower"></a>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Carousel controls -->
+                            <a class="carousel-control left" href="#nail" data-slide="prev">
+                                <span class="glyphicon glyphicon-chevron-left"></span>
+                            </a>
+                            <a class="carousel-control right" href="#nail" data-slide="next">
+                                <span class="glyphicon glyphicon-chevron-right"></span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--thumbnail carousel 2-->
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 col-sm-8 col-xs-4">
+                        <h3>Desserts</h3>
+                        <div id="nail1" class="carousel2 carousel slide" data-ride="carousel" data-interval="0">
+                            <!-- Carousel indicators -->
+                            <ol class="carousel-indicators">
+                                <li data-target="nail1" data-slide-to="0" class="active"></li>
+                                <li data-target="#nail1" data-slide-to="1"></li>
+                                <li data-target="#nail1" data-slide-to="2"></li>
+                            </ol>
+                            <!--  carousel items -->
+                            <div class="carousel-inner">
+                                <div class="item carousel-item active">
+                                    <div class="row">
+                                        <div class="col-sm-4">
+
+                                            <a href="#" class=""><img
+                                                    src="https://images.pexels.com/photos/808941/pexels-photo-808941.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+                                                    class="nail-img img-responsive img-fluid" alt="dessert"></a>
+                                        </div>
+                                        <div class="hidden-xs col-sm-4">
+
+                                            <a href="#" class=""><img
+                                                    src="https://images.pexels.com/photos/827513/pexels-photo-827513.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+                                                    alt="dessert" class="nail-img img-responsive img-fluid"></a>
+                                        </div>
+                                        <div class="hidden-xs col-sm-4">
+                                            <a href="#" class=""><img
+                                                    src="https://images.pexels.com/photos/461175/pexels-photo-461175.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+                                                    alt="dessert" class="nail-img img-responsive img-fluid"></a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="item carousel-item">
+                                    <div class="row">
+                                        <div class="col-sm-4">
+
+                                            <a href="#"><img
+                                                    src="https://images.pexels.com/photos/357586/pexels-photo-357586.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+                                                    class="nail-img img-responsive img-fluid" alt="flower"></a>
+
+                                        </div>
+                                        <div class="hidden-xs col-sm-4">
+
+                                            <a href="#"><img
+                                                    src="https://images.pexels.com/photos/45202/brownie-dessert-cake-sweet-45202.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+                                                    class="nail-img img-responsive img-fluid" alt="flower"></a>
+
+                                        </div>
+                                        <div class="hidden-xs col-sm-4">
+
+                                            <a href="#"><img
+                                                    src="https://images.pexels.com/photos/890577/pexels-photo-890577.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+                                                    class="nail-img img-responsive img-fluid" alt="flower"></a>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item carousel-item">
+                                    <div class="row">
+                                        <div class="col-sm-4">
+
+                                            <a href="#"><img
+                                                    src="https://images.pexels.com/photos/37537/cake-pops-candies-chocolate-food-37537.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+                                                    class="nail-img img-responsive img-fluid" style="width: 100%;"
+                                                    alt="flower"></a>
+
+                                        </div>
+                                        <div class="hidden-xs col-sm-4">
+
+                                            <a href="#"><img
+                                                    src="https://images.pexels.com/photos/161420/ice-cream-cone-melting-hot-ice-cream-scoop-161420.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+                                                    class="nail-img img-responsive img-fluid" alt="flower"></a>
+
+                                        </div>
+                                        <div class="hidden-xs col-sm-4">
+
+                                            <a href="#"><img
+                                                    src="https://images.pexels.com/photos/239584/pexels-photo-239584.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+                                                    class="nail-img img-responsive img-fluid" alt="flower"></a>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Carousel controls -->
+                            <a class="carousel-control left" href="#nail1" data-slide="prev">
+                                <span class="glyphicon glyphicon-chevron-left"></span>
+                            </a>
+                            <a class="carousel-control right" href="#nail1" data-slide="next">
+                                <span class="glyphicon glyphicon-chevron-right"></span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--thumbnail carousel 3-->
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 col-sm-8 col-xs-4">
+                        <h3>Animals</h3>
+                        <div id="nail2" class="carousel3 carousel slide" data-ride="carousel" data-interval="0">
+                            <!-- Carousel indicators -->
+                            <ol class="carousel-indicators">
+                                <li data-target="nail2" data-slide-to="0" class="active"></li>
+                                <li data-target="#nail2" data-slide-to="1"></li>
+                                <li data-target="#nail2" data-slide-to="2"></li>
+                            </ol>
+                            <!--  carousel items -->
+                            <div class="carousel-inner">
+                                <div class="item carousel-item active">
+                                    <div class="row">
+                                        <div class="col-sm-4">
+
+                                            <a href="#" class=""><img
+                                                    src="https://images.pexels.com/photos/127027/pexels-photo-127027.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+                                                    class="nail-img img-responsive img-fluid" alt="animals"></a>
+                                        </div>
+                                        <div class="hidden-xs col-sm-4">
+
+                                            <a href="#" class=""><img
+                                                    src="https://images.pexels.com/photos/39317/chihuahua-dog-puppy-cute-39317.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+                                                    alt="animals" class="nail-img img-responsive img-fluid"></a>
+                                        </div>
+                                        <div class="hidden-xs col-sm-4">
+                                            <a href="#" class=""><img
+                                                    src="https://images.pexels.com/photos/69372/pexels-photo-69372.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+                                                    alt="animals" class="nail-img img-responsive img-fluid"></a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="item carousel-item">
+                                    <div class="row">
+                                        <div class="col-sm-4">
+
+                                            <a href="#"><img
+                                                    src="https://images.pexels.com/photos/53966/rabbit-palm-hand-snatch-53966.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+                                                    class="nail-img img-responsive img-fluid" alt="animals"></a>
+
+                                        </div>
+                                        <div class="hidden-xs col-sm-4">
+
+                                            <a href="#"><img
+                                                    src="https://images.pexels.com/photos/735423/pexels-photo-735423.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+                                                    class="nail-img img-responsive img-fluid" alt="animals"></a>
+
+                                        </div>
+                                        <div class="hidden-xs col-sm-4">
+
+                                            <a href="#"><img
+                                                    src="https://images.pexels.com/photos/50577/hedgehog-animal-baby-cute-50577.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+                                                    class="nail-img img-responsive img-fluid" alt="animals"></a>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item carousel-item">
+                                    <div class="row">
+                                        <div class="col-sm-4">
+
+                                            <a href="#"><img
+                                                    src="https://images.pexels.com/photos/271955/pexels-photo-271955.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+                                                    class="nail-img img-responsive img-fluid" style="width: 100%;"
+                                                    alt="animals"></a>
+
+                                        </div>
+                                        <div class="hidden-xs col-sm-4">
+
+                                            <a href="#"><img
+                                                    src="https://images.pexels.com/photos/271824/pexels-photo-271824.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+                                                    class="nail-img img-responsive img-fluid" alt="animals"></a>
+
+                                        </div>
+                                        <div class="hidden-xs col-sm-4">
+
+                                            <a href="#"><img
+                                                    src="https://images.pexels.com/photos/372166/pexels-photo-372166.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+                                                    class="nail-img img-responsive img-fluid" alt="animals"></a>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Carousel controls -->
+                            <a class="carousel-control left" href="#nail2" data-slide="prev">
+                                <span class="glyphicon glyphicon-chevron-left"></span>
+                            </a>
+                            <a class="carousel-control right" href="#nail2" data-slide="next">
+                                <span class="glyphicon glyphicon-chevron-right"></span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--thumbnail carousel 4-->
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 col-sm-8 col-xs-4">
+                        <h3>Miscellaneous</h3>
+                        <div id="nail3" class="carousel4 carousel slide" data-ride="carousel" data-interval="0">
+                            <!-- Carousel indicators -->
+                            <ol class="carousel-indicators">
+                                <li data-target="nail3" data-slide-to="0" class="active"></li>
+                                <li data-target="#nail3" data-slide-to="1"></li>
+                                <li data-target="#nail3" data-slide-to="2"></li>
+                            </ol>
+                            <!--  carousel items -->
+                            <div class="carousel-inner">
+                                <div class="item carousel-item active">
+                                    <div class="row">
+                                        <div class="col-sm-4">
+                                            <a href="#" class="">
+                                                <img src="https://images.pexels.com/photos/1124960/pexels-photo-1124960.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" class="nail-img img-responsive img-fluid" alt="misc">
+                                            </a>
+                                        </div>
+                                        <div class="hidden-xs col-sm-4">
+                                            <a href="#" class="">
+                                                <img src="https://images.pexels.com/photos/459791/pexels-photo-459791.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="misc" class="nail-img img-responsive img-fluid">
+                                            </a>
+                                        </div>
+                                        <div class="hidden-xs col-sm-4">
+                                            <a href="#" class="">
+                                                <img src="https://images.pexels.com/photos/949590/pexels-photo-949590.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="misc" class="nail-img img-responsive img-fluid">
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="item carousel-item">
+                                    <div class="row">
+                                        <div class="col-sm-4">
+                                            <a href="#">
+                                                <img src="https://images.pexels.com/photos/386025/pexels-photo-386025.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" class="nail-img img-responsive img-fluid" alt="misc">
+                                            </a>
+                                        </div>
+                                        <div class="hidden-xs col-sm-4">
+                                            <a href="#">
+                                                <img src="https://images.pexels.com/photos/324654/pexels-photo-324654.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" class="nail-img img-responsive img-fluid" alt="misc">
+                                            </a>
+                                        </div>
+                                        <div class="hidden-xs col-sm-4">
+                                            <a href="#">
+                                                <img src="https://images.pexels.com/photos/542556/pexels-photo-542556.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" class="nail-img img-responsive img-fluid" alt="misc">
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="item carousel-item">
+                                    <div class="row">
+                                        <div class="col-sm-4">
+                                            <a href="#">
+                                                <img src="https://images.pexels.com/photos/908284/pexels-photo-908284.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" class="nail-img img-responsive img-fluid" style="width: 100%;" alt="misc">
+                                            </a>
+                                        </div>
+                                        <div class="hidden-xs col-sm-4">
+                                            <a href="#">
+                                                <img src="https://images.pexels.com/photos/357309/pexels-photo-357309.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" class="nail-img img-responsive img-fluid" alt="misc">
+                                            </a>
+                                        </div>
+                                        <div class="hidden-xs col-sm-4">
+                                            <a href="#">
+                                                <img src="https://images.pexels.com/photos/34074/pexels-photo.jpg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" class="nail-img img-responsive img-fluid" alt="misc">
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Carousel controls -->
+                            <a class="carousel-control left" href="#nail3" data-slide="prev">
+                                <span class="glyphicon glyphicon-chevron-left"></span>
+                            </a>
+                            <a class="carousel-control right" href="#nail3" data-slide="next">
+                                <span class="glyphicon glyphicon-chevron-right"></span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div> 
+        </div>    
+    </div>
+</div>
+
+
+
+{% endblock %}
+
+
+
+
+
+
+
+{% block link_js %}
+<script type="text/javascript" src="{% static 'js/magasin.js' %}"></script>
+<script src='https://sachinchoolur.github.io/lightslider/dist/js/lightslider.js'></script>
+<script>
+    $('#lightSlider').lightSlider({
+        gallery: true,
+        item: 1,
+        loop: true,
+        slideMargin: 0,
+        thumbItem: 9
+    });
+</script>
+{% endblock %}

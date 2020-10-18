@@ -1,0 +1,47 @@
+body{
+	font-family: arial;
+	background-color: #fff;
+}
+.logo_maintenance{
+	width:60%;
+	position: relative;
+	top: 50vh;
+	transform: translateY(-50%);
+	margin: auto;
+	padding: 10px;
+}
+.logo_maintenance img{
+	width: 80%;
+	margin-left: 10%;
+}
+#site{
+	font-size: 2.4em;
+	font-weight: bold;
+	color: black;
+	text-align: center;
+	animation: siteanimation 3s ease-in-out;
+}
+@keyframes siteanimation{
+	0%{
+		letter-spacing: 20px;
+	}
+	100%{
+		letter-spacing: 3px;
+	}
+}
+
+#message{
+	text-align: center;
+	color: green;
+	font-weight: bold;
+	font-size: 1.1em;
+	animation: messageanimation 3s ease-in-out;
+}
+@keyframes messageanimation{
+	0%{
+		transform: scale(0);
+	}
+	100%{
+		letter-spacing: 1px;
+	}
+}

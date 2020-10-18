@@ -1,0 +1,90 @@
+{% extends "basedash.html" %}
+
+{% load static %}
+
+
+{% block title %} Client {% endblock %}
+
+
+{% block link_css %}
+<link rel="stylesheet" href="{% static 'css/client.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<div class="row">
+    <div class="col-md">
+        <div class="card card-body">
+            <h5>Client</h5>
+            <hr>
+            <a href="#" class="btn btn-outline-info btn-sm btn-block">
+                Modifier client
+            </a>
+            <a href="#" class="btn btn-outline-info btn-sm btn-block">
+                Créer client
+            </a>
+        </div>
+    </div>
+
+    <div class="col-md">
+        <div class="card card-body">
+            <h5>Information contact</h5>
+            <hr>
+            <p>Email : {{client.email}}</p>
+            <p>Téléphone : {{client.phone}}</p>
+        </div>
+    </div>
+
+    <div class="col-md">
+        <div class="card card-body">
+            <h5>Total commandes</h5>
+            <hr>
+            <h1 style="text-align: center; padding: 10px;">{{total_cmd}}</h1>
+        </div>
+    </div>
+</div>
+
+<br>
+<div class="row">
+    <div class="col">
+        <div class="card card-body">
+            <form method="get">
+                <button class="btn btn-primary">Recherche</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<br>
+<div class="row">
+    <div class="col-md">
+        <div class="card card-body">
+            <table class="table table-sm">
+                <tr>
+                    <th>Produit</th>
+                    <th>Catégorie</th>
+                    <th>Date de commande</th>
+                    <th>Status</th>
+                    <th>Modifier</th>
+                    <th>Supprimer</th>
+                </tr>
+                {% for cmd in commande %}
+                    <tr>
+                        <td>{{cmd.produit}}</td>
+                        <td>{{cmd.produit.categorie}}</td>
+                        <td>{{cmd.date_created}}</td>
+                        <td>{{cmd.status}}</td>
+                        <td><a class="btn btn-sm btn-info" href="{% url 'dashboard:modifier_cmd' cmd.id %}">Modifier</a></td>
+                        <td><a class="btn btn-sm btn-danger" href="{% url 'dashboard:supprimer_cmd' cmd.id %}">Supprimer</a></td>
+                    </tr>
+                {% endfor %}
+            </table>
+        </div>
+    </div>
+</div>
+
+
+
+{% endblock %}
+
+

@@ -1,0 +1,442 @@
+
+.card {
+    background-color: #fff;
+    padding: 14px;
+    border: none
+}
+
+.demo {
+    width: 100%
+}
+
+.demo ul {
+    list-style: none outside none;
+    padding-left: 0;
+    margin-bottom: 0
+}
+
+.demo li {
+    display: block;
+    float: left;
+    margin-right: 6px;
+    cursor: pointer
+}
+
+.demo img {
+    display: block;
+    height: auto;
+    width: 100%
+}
+
+.stars i {
+    color: #f6d151
+}
+
+.stars span {
+    font-size: 13px
+}
+
+hr {
+    color: #d4d4d4
+}
+
+.badge {
+    padding: 5px !important;
+    padding-bottom: 6px !important
+}
+
+.badge i {
+    font-size: 10px
+}
+
+.profile-image {
+    width: 35px
+}
+
+.comment-ratings i {
+    font-size: 13px
+}
+
+.username {
+    font-size: 12px
+}
+
+.comment-section .lireplus {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.comment-section .lireplus:hover {
+    color: #ff7676;
+}
+
+.comment-profile {
+    line-height: 17px
+}
+
+.commentaire {
+    font-size: 12px;
+    margin-left: 25px;
+}
+
+.date span {
+    font-size: 12px
+}
+
+.p-ratings i {
+    color: #f6d151;
+    font-size: 12px
+}
+
+.btn-long {
+    padding-left: 35px;
+    padding-right: 35px
+}
+
+.buttons {
+    margin-top: 15px
+}
+
+.buttons .btn {
+    height: 46px
+}
+
+.buttons .cart {
+    border-color: #ff7676;
+    color: #ff7676
+}
+
+.buttons .cart:hover {
+    background-color: #e86464 !important;
+    color: #fff
+}
+
+.buttons .buy {
+    color: #fff;
+    background-color: #ff7676;
+    border-color: #ff7676
+}
+
+.buttons .buy:focus,
+.buy:active {
+    color: #fff;
+    background-color: #ff7676;
+    border-color: #ff7676;
+    box-shadow: none
+}
+
+.buttons .buy:hover {
+    color: #fff;
+    background-color: #e86464;
+    border-color: #e86464
+}
+
+.buttons .wishlist {
+    background-color: #fff;
+    border-color: #ff7676
+}
+
+.buttons .wishlist:hover {
+    background-color: #e86464;
+    border-color: #e86464;
+    color: #fff
+}
+
+.buttons .wishlist:hover i {
+    color: #fff
+}
+
+.buttons .wishlist i {
+    color: #ff7676
+}
+
+.comment-ratings i {
+    color: #f6d151
+}
+
+.followers {
+    font-size: 9px;
+    color: #d6d4d4
+}
+
+.store-image {
+    width: 42px
+}
+
+.dot {
+    height: 10px;
+    width: 10px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 5px
+}
+
+.bullet-text {
+    font-size: 12px
+}
+
+.my-color {
+    margin-top: 10px;
+    margin-bottom: 10px
+}
+
+label.radio {
+    cursor: pointer
+}
+
+label.radio input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    visibility: hidden;
+    pointer-events: none
+}
+
+label.radio span {
+    border: 2px solid #8f37aa;
+    display: inline-block;
+    color: #8f37aa;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    text-transform: uppercase;
+    transition: 0.5s all
+}
+
+label.radio .red {
+    background-color: red;
+    border-color: red
+}
+
+label.radio .blue {
+    background-color: blue;
+    border-color: blue
+}
+
+label.radio .green {
+    background-color: green;
+    border-color: green
+}
+
+label.radio .orange {
+    background-color: orange;
+    border-color: orange
+}
+
+label.radio input:checked+span {
+    color: #fff;
+    position: relative
+}
+
+label.radio input:checked+span::before {
+    opacity: 1;
+    content: '\2713';
+    position: absolute;
+    font-size: 13px;
+    font-weight: bold;
+    left: 4px
+}
+
+.similar-products .card-body {
+    padding: 0.3rem 0.3rem 0.2rem
+}
+
+.card-title {
+    color: #000;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* PORTOFOLIO */
+/*navbar*/
+.margin{
+    margin-bottom:3em;
+  }
+  #head {
+    margin-top: 0em;
+    padding-left: 0.5em;
+    color: white;
+    font-size: 2em;
+    line-height: 0.5em;
+  }
+  button.sub {
+    background-color: #febd69;
+  }
+  button.sub:hover {
+    background-color: #fead3f;
+  }
+  .search {
+    margin-top: 1em;
+    padding-left: 1em;
+    width: 30%;
+  }
+  .white {
+    color: white;
+  }
+  .grey {
+    color: #ccc;
+  }
+  .bold {
+    font-weight: bold;
+  }
+  .dropbtn {
+    background-color: #1e2e3a;
+    color: white;
+    padding: 5px;
+    font-size: 1em;
+    border: none;
+  }
+  
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 100px;
+  }
+  .dropdown-content a {
+    color: black;
+    padding: 8px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+  .dropdown-content a:hover {
+    color: darkorange;
+    text-decoration: none;
+  }
+  .text:hover {
+    text-decoration: underline;
+  }
+  ul > li {
+    padding-top: 0.5em;
+    padding-left: 0.5em;
+  }
+  .navbar-center {
+    position: absolute;
+    left: 50%;
+    transform: translatex(-70%);
+  }
+  @media (max-width: 768px) {
+    .dropdown:hover .dropdown-content {
+      display: none;
+    }
+    #head {
+      position: fixed;
+      top: 0.5em;
+    }
+  }
+  .rt {
+    padding-right: 1.5em;
+    font-size: 1.8em;
+  }
+  .small {
+    position: absolute;
+    right: 6em;
+    top: 1em;
+  }
+  .loo {
+    position: absolute;
+    top: 4em;
+    right: 4.5em;
+  }
+  .rtt {
+    padding-right: 0.5em;
+  }
+  .center {
+    text-align: center;
+    color: black;
+  }
+   /*carousel*/
+.carousel1 {
+    margin-top: 7.5em;
+    max-height: 300px;
+    }
+.carousel1 .pic {
+    height: 300px;
+}
+.pic img {
+    min-height: 300px;
+}
+ol > li {
+    visibility:hidden;
+}
+@media  (max-width:767px){
+    .carousel1{
+        margin-top:7em;
+        max-height: 300px;
+    }
+}
+
+@media(min-width:637px) and (max-width:767px){
+    .nail-img {
+        width: 100%;
+        height: 300px;
+    }             
+} 
+.side {  
+
+    padding-top: 1em;
+}
+                
+
+.clock{
+    padding-top: 2em;
+}
+
+/*footer*/
+.bot{
+    background-color: #37475A;
+    margin-top: 2em;
+    text-align: center;
+    height: 45px;
+}
+.bot:hover{
+    background-color: #485769;
+}
+.bot a:hover{
+    
+    color: white;
+    text-decoration: none;
+}
+.less {
+    font-size: 1em;
+}
+.foot {
+    font-size: 0.95em;
+}
+.foot:hover{
+    color:#ccc;
+}
+.gap{
+    margin-bottom: 8px;
+}
+.end{
+    text-align: center;
+}
+.pop{
+    font-size: 0.8em;
+    
+}

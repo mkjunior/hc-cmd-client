@@ -1,0 +1,105 @@
+{% extends 'baseshop.html' %}
+
+{% load static %}
+
+
+{% block title %} Liste des souhaits {% endblock %}
+
+
+{% block link_css %}
+<link rel="stylesheet" href="{% static 'css/wishes.css' %}">
+{% endblock %}
+
+{% block contenu %}
+
+
+<div class="main">
+    <div class="left-icon">
+        <div><img
+                onclick="document.getElementById('img-holder').style.backgroundImage = 'url(https://static-assets.glossier.com/production/spree/images/attachments/000/003/755/portrait_normal/LashSlick.jpg?1556563261)'"
+                src="https://static-assets.glossier.com/production/spree/images/attachments/000/003/755/square_tiny/LashSlick.jpg?1556563261"
+                id="left-circle">
+        </div>
+        <div>
+            <img onclick="document.getElementById('img-holder').style.backgroundImage = 'url(https://static-assets.glossier.com/production/spree/images/attachments/000/002/019/portrait_normal/Carousel-6-lashslick.jpg?1559849241)'"
+                src="https://static-assets.glossier.com/production/spree/images/attachments/000/002/019/square_tiny/Carousel-6-lashslick.jpg?1559849241"
+                id="left-circle">
+        </div>
+        <div>
+            <img onclick="document.getElementById('img-holder').style.backgroundImage = 'url(https://static-assets.glossier.com/production/spree/images/attachments/000/002/010/portrait_normal/Carousel-6.jpg?1524866348)'"
+                src="https://static-assets.glossier.com/production/spree/images/attachments/000/002/010/square_tiny/Carousel-6.jpg?1524866348"
+                id="left-circle">
+        </div>
+        <div>
+            <img onclick="document.getElementById('img-holder').style.backgroundImage = 'url(https://static-assets.glossier.com/production/spree/images/attachments/000/002/009/portrait_normal/04_BeforeAfter_Diarrha.jpg?1571950361)'"
+                src="https://static-assets.glossier.com/production/spree/images/attachments/000/002/009/square_tiny/04_BeforeAfter_Diarrha.jpg?1571950361"
+                id="left-circle">
+        </div>
+        <div>
+            <img onclick="document.getElementById('img-holder').style.backgroundImage = 'url(https://static-assets.glossier.com/production/spree/images/attachments/000/004/516/portrait_normal/05_BeforeAfter_Natassia.jpg?1571950374)'"
+                src="https://static-assets.glossier.com/production/spree/images/attachments/000/004/516/square_tiny/05_BeforeAfter_Natassia.jpg?1571950374"
+                id="left-circle">
+        </div>
+        <div>
+            <img onclick="document.getElementById('img-holder').style.backgroundImage = 'url(https://static-assets.glossier.com/production/spree/images/attachments/000/002/018/portrait_normal/Carousel-5.jpg?1525832881)'"
+                src="https://static-assets.glossier.com/production/spree/images/attachments/000/002/018/square_tiny/Carousel-5.jpg?1525832881"
+                id="left-circle">
+        </div>
+        <div>
+            <img onclick="document.getElementById('img-holder').style.backgroundImage = 'url(https://static-assets.glossier.com/production/spree/images/attachments/000/002/017/portrait_normal/Carousel-4.jpg?1525832807)'"
+                src="https://static-assets.glossier.com/production/spree/images/attachments/000/002/017/square_tiny/Carousel-4.jpg?1525832807"
+                id="left-circle">
+        </div>
+        <div>
+            <img onclick="document.getElementById('img-holder').style.backgroundImage = 'url(https://static-assets.glossier.com/production/spree/images/attachments/000/002/016/portrait_normal/Carousel-2.jpg?1525832780)'"
+                src="https://static-assets.glossier.com/production/spree/images/attachments/000/002/016/square_tiny/Carousel-2.jpg?1525832780"
+                id="left-circle">
+        </div>
+        <div>
+            <img onclick="document.getElementById('img-holder').style.backgroundImage = 'url(https://static-assets.glossier.com/production/spree/images/attachments/000/002/012/portrait_normal/Carousel-8.jpg?1524866388)'"
+                src="https://static-assets.glossier.com/production/spree/images/attachments/000/002/012/square_tiny/Carousel-8.jpg?1524866388"
+                id="left-circle">
+        </div>
+    </div>
+    <div class="row">
+        <div class="column">
+            <div id="img-holder"></div>
+        </div>
+        <div class="column">
+            <h>Lash Slick</h>
+            <p>film from mascara 8.5g/0.29 oz</p>
+            <button class="top-rate-button">Top Rated</button><br>
+            <h style="font-size:0.8em; display:block;padding-top: 8px;">Extensions without extensions</h><br>
+            <p2 style="padding-bottom:50px;"><b>What it is</b>: The perfect everyday black mascara</p2><br><br>
+            <p2><b>Why it's special:</b></p2>
+            <ul>
+                <li>Curls and sculpts as it lengthens, creating a natural “baby extension” effect without clumping</li>
+                <li>Teeny-tiny fibers coat lashes from root to tip, while flexible film-forming polymers lift and lock
+                    each fiber into place</li>
+                <li>Water-resistant (not waterproof), so it washes off easily with warm water or Milky Oil at the end of
+                    your day</li>
+            </ul>
+            <p2 style="margin-left:10px;"><b>Good to know:</b> cruelty free, paraben free, fragrance free,
+                hypoallergenic, allergy tested, dermatologist tested, ophthalmologist tested, suitable for sensitive
+                eyes and contact lens wearers, non-irritating</p2>
+            <br><br><br>
+            <div class="icon-box">
+                <div>
+                    <img src="https://www.svgrepo.com/show/27705/tree.svg" id="flex-icon">
+                </div>
+                <div>
+                    <img src="https://www.svgrepo.com/show/113439/poinsettia.svg" id="flex-icon">
+                </div>
+                <div>
+                    <img src="https://www.svgrepo.com/show/37019/umbrella.svg" id="flex-icon"></div>
+            </div>
+            <button class="price-button">Add to cart-$16</button>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+
+{% block link_js %}
+<script type="text/javascript" src="{% static 'js/wishes.js' %}"></script>
+{% endblock %}

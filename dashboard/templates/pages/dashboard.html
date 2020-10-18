@@ -1,0 +1,354 @@
+{% extends 'basedash.html' %}
+
+{% load static %}
+
+
+{% block title %} Tableau de bord {% endblock %}
+
+
+{% block link_css %}
+<link rel="stylesheet" href="{% static 'css/dashboard.css' %}">
+{% endblock %}
+
+{% block content %}
+<!--
+
+
+<div class="row tableau">
+
+    <div class="col-md-5">
+        <h5>CLIENT</h5>
+        <hr>
+        <div class="card card-body">
+            <a href="" class="btn btn-primary btn-sm btn-block">
+                Créer client
+            </a>
+            <table class="table table-sm">
+                <tr>
+                    <th></th>
+                    <th>Client</th>
+                    <th>Téléphone</th>
+                </tr>
+                {% for clt in client %}
+                    <tr>
+                        <td><a class="btn btn-sm btn-info" href="{% url 'dashboard:client' clt.id %}">Détails</a></td>
+                        <td>{{clt.nom}}</td>
+                        <td>{{clt.phone}}</td>
+                    </tr>
+                {% endfor %}
+            </table>
+        </div>
+    </div>
+
+    <div class="col-md-7">
+        <h5>LES 5 DERNIERES COMMANDES</h5>
+        <hr>
+        <div class="card card-body">
+            <a href="{% url 'dashboard:creer_cmd' %}" class="btn btn-primary btn-sm btn-block">
+                Créer commande
+            </a>
+            <table class="table table-sm">
+                <tr>
+                    <th>Produits</th>
+                    <th>Date de commande</th>
+                    <th>Statut</th>
+                    <th>Modifier</th>
+                    <th>Supprimer</th>
+                </tr>
+                {% for cmd in commande %}
+                    <tr>
+                        <td>{{cmd.produit}}</td>
+                        <td>{{cmd.date_created}}</td>
+                        <td>{{cmd.status}}</td>
+                        <td><a class="btn btn-sm btn-info" href="{% url 'dashboard:modifier_cmd' cmd.id %}">Modifier</a></td>
+                        <td><a class="btn btn-sm btn-danger" href="{% url 'dashboard:supprimer_cmd' cmd.id %}">Supprimer</a></td>
+                    </tr>
+                {% endfor %}
+            </table>
+        </div>
+    </div>
+
+</div>
+-->
+
+<div id="content" class="container-fluid p-5">
+    <section class="py-3">
+        <div class="row">
+            <div class="col-xl-3 col-lg-6">
+                <div class="card border-0">
+                    <div class="card-body d-flex">
+                        <div>
+                            <div class="circle rounded-circle d-flex align-self-center mr-3">
+                                <i class="far fa-chart-bar align-self-center mx-auto lead"></i>
+                            </div>
+                        </div>
+                        <div class="">
+                            <h5 class="mb-0">3200</h5>
+                            <small class="text-muted">Total ventes</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-3 col-lg-6">
+                <div class="card border-0">
+                    <div class="card-body d-flex">
+                        <div>
+                            <div class="circle rounded-circle d-flex align-self-center mr-3">
+                                <i class="fab fa-product-hunt align-self-center mx-auto lead"></i>
+                            </div>
+                        </div>
+                        <div class="">
+                            <h5 class="mb-0">128</h5>
+                            <small class="text-muted">Produits en ligne</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-3 col-lg-6">
+                <div class="card border-0">
+                    <div class="card-body d-flex">
+                        <div>
+                            <div class="circle rounded-circle d-flex align-self-center mr-3">
+                                <i class="fas fa-user-plus align-self-center mx-auto lead"></i>
+                            </div>
+                        </div>
+                        <div class="">
+                            <h5 class="mb-0">1345</h5>
+                            <small class="text-muted">Nouveaux clients</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-3 col-lg-6">
+                <div class="card border-0r">
+                    <div class="card-body d-flex">
+                        <div>
+                            <div class="circle rounded-circle d-flex align-self-center mr-3">
+                                <i class="fas fa-hand-holding-usd align-self-center mx-auto lead"></i>
+                            </div>
+                        </div>
+                        <div class="">
+                            <h5 class="mb-0">425.000 Fcfa</h5>
+                            <small class="text-muted">Gains</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+
+        <!-- Statut de commande 
+        <div class="container-fluid pt-4">
+            <div class="row">
+                <div class="col-xl-4 col-lg-6">
+                    <div class="card w-100 border-0">
+                        <div class="card-body d-flex"> <i class="fas fa-shopping-cart fa-3x mb-3 mt-1"></i>
+                            <h5 class="card-title">Total de commandes</h5>
+                            <p class="mb-3 text-muted">Vous avez reçu ce jour 15 nouvelles commandes</p> 
+                            <h3 class="card-title">{{total_commande}}</h3>
+                            <a href="#" class="btn bg-success-400" data-abc="true">Voir les commandes</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-lg-6">
+                    <div class="card w-100">
+                        <div class="card-body text-center"> <i class="far fa-check-circle fa-3x mb-3 mt-1"></i>
+                            <h5 class="card-title">Commandes livrées</h5>
+                            <p class="mb-3">Vous avez livré cette semaine 07 commandes</p> 
+                            <h3 class="card-title">{{livre}}</h3>
+                            <a href="#" class="btn bg-success-400" data-abc="true">Voir les commandes</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-lg-6">
+                    <div class="card w-100">
+                        <div class="card-body text-center"> <i class="far fa-pause-circle fa-3x mb-3 mt-1"></i>
+                            <h5 class="card-title">Commandes en attente</h5>
+                            <p class="mb-3">Vous avez 23 commandes en attente</p> 
+                            <h3 class="card-title">{{attente}}</h3>
+                            <a href="#" class="btn bg-success-400" data-abc="true">Voir les commandes</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+-->
+
+        
+        <div class="row mb-3">
+
+            <!-- Utilisateurs -->
+            <div class="col-xl-7 col-lg-12">
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th colspan="2"><small class="font-weight-bold">Utilisateur</small></th>
+                                <th><small class="font-weight-bold">Statut</small></th>
+                                <th><small class="font-weight-bold">Configuration</small></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="shadow-sm">
+                                <td><img src="{% static 'img/junior.png' %}" alt="" class="img-fluid avatar rounded-circle"></td>
+                                <td><span class="d-block">Junior</span> <small class="text-muted">mbonguekj@hellocity.cm</small></td>
+                                <td class="align-middle"><span class="badge badge-primary text-primary">Active</span></td>
+                                <td class="align-middle"><span class="badge badge-secondary">Editer<i class="fas fa-user-cog ml-2"></i></span></td>
+                            </tr>
+                            <tr class="shadow-sm">
+                                <td><img src="{% static 'img/celia.png' %}" alt="" class="img-fluid avatar rounded-circle"></td>
+                                <td><span class="d-block">Célia</span> <small class="text-muted">celia@hellocity.cm</small></td>
+                                <td class="align-middle"><span class="badge badge-primary text-primary">Active</span></td>
+                                <td class="align-middle"><span class="badge badge-secondary">Editer<i class="fas fa-user-cog ml-2"></i></span></td>
+                            </tr>
+                            <tr class="shadow-sm">
+                                <td><img src="{% static 'img/rose.png' %}" alt="" class="img-fluid avatar rounded-circle"></td>
+                                <td><span class="d-block">Rose</span> <small class="text-muted">rose@hellocity.cm</small></td>
+                                <td class="align-middle"><span class="badge badge-primary text-primary">Active</span></td>
+                                <td class="align-middle"><span class="badge badge-secondary">Editer<i class="fas fa-user-cog ml-2"></i></span></td>
+                            </tr>
+                            <tr class="shadow-sm">
+                                <td><img src="{% static 'img/francois.png' %}" alt="" class="img-fluid avatar rounded-circle"></td>
+                                <td><span class="d-block">Samy</span> <small class="text-muted">prime@hellocity.cm</small></td>
+                                <td class="align-middle"><span class="badge badge-primary text-primary">Active</span></td>
+                                <td class="align-middle"><span class="badge badge-secondary">Editer<i class="fas fa-user-cog ml-2"></i></span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Messages utilisateurs -->
+            <div class="col-xl-5 col-lg-12">
+                <div class="card mb-5 shadow-sm shadow-hover border-0 mt-4">
+                    <div class="card-header bg-light border-0 pt-3 pb-0">
+                        <h6 class="mb-0">Messages</h6>
+                    </div>
+                    <div class="card-body">
+                        <div class="d-flex border-bottom py-3">
+                            <div class="mr-3">
+                                <img src="{% static 'img/franck.png' %}" alt="" class="img-fluid avatar rounded-circle">
+                            </div>
+                            <div>
+                                <div class="d-flex">
+                                    <p class="mb-0">Franck</p>
+                                    <small class="text-muted ml-auto">Depuis 2 heures</small>
+                                </div>
+                                <small class="text-muted">J'ai beaucoup apprécié votre produit. Merci !</small>
+                            </div>
+                        </div>
+                        <div class="d-flex border-bottom py-3">
+                            <div class="mr-3">
+                                <img src="{% static 'img/larissa.png' %}" alt="" class="img-fluid avatar rounded-circle">
+                            </div>
+                            <div>
+                                <div class="d-flex">
+                                    <p class="mb-0">Larissa</p>
+                                    <small class="text-muted ml-auto">Depuis 1 heure</small>
+                                </div>
+                                <small class="text-muted">Vous avez encore des parfums MK ?</small>
+                            </div>
+                        </div>
+                        <div class="d-flex border-bottom py-3">
+                            <div class="mr-3">
+                                <img src="{% static 'img/francois.png' %}" alt="" class="img-fluid avatar rounded-circle">
+                            </div>
+                            <div>
+                                <div class="d-flex">
+                                    <p class="mb-0">Francois</p>
+                                    <small class="text-muted ml-auto">Depuis 42 mins</small>
+                                </div>
+                                <small class="text-muted">JMerci pour ce portable</small>
+                            </div>
+                        </div>
+                        <div class="text-center pt-3">
+                            <a href=""><small>Voir tous les messages</small></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="card w-100 shadow-sm shadow-hover border-0">
+                    <div class="card-body">
+                        <h5 class="mb-0">Presentation des produits</h5>
+                        <small class="d-inline-block text-muted mb-2">12:30 - 15:45</small>
+                        <div class="mb-4">
+                            <span class="badge badge-primary text-primary mr-1">Marchandises</span>
+                            <span class="badge badge-primary text-primary">Directives</span>
+                        </div>
+                        <div class="d-flex">
+                            <div>
+                                <img src="{% static 'img/junior.png' %}" alt="" class="img-fluid avatar rounded-circle">
+                                <img src="{% static 'img/celia.png' %}" alt="" class="img-fluid avatar rounded-circle">
+                            </div>
+                            <div class="d-flex ml-auto">
+                                <span class="badge badge-secondary align-self-center">Assister <i class="far fa-check-circle ml-2"></i></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="card w-100 shadow-sm shadow-hover border-0">
+                    <div class="card-body">
+                        <h5 class="mb-0">Produits vendus</h5>
+                        <small class="d-inline-block text-muted mb-2">12:30 - 15:45</small>
+                        <div class="mb-4">
+                            <span class="badge badge-primary text-primary mr-1">Marchandises</span>
+                            <span class="badge badge-primary text-primary">Directives</span>
+                        </div>
+                        <div class="d-flex">
+                            <div>
+                                <img src="{% static 'img/junior.png' %}" alt="" class="img-fluid avatar rounded-circle">
+                                <img src="{% static 'img/celia.png' %}" alt="" class="img-fluid avatar rounded-circle">
+                            </div>
+                            <div class="d-flex ml-auto">
+                                <span class="badge badge-secondary align-self-center">Assister <i class="far fa-check-circle ml-2"></i></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="card w-100 shadow-sm shadow-hover border-0">
+                    <div class="card-body">
+                        <h5 class="mb-0">Meilleures ventes</h5>
+                        <small class="d-inline-block text-muted mb-2">12:30 - 15:45</small>
+                        <div class="mb-4">
+                            <span class="badge badge-primary text-primary mr-1">Marchandises</span>
+                            <span class="badge badge-primary text-primary">Directives</span>
+                        </div>
+                        <div class="d-flex">
+                            <div>
+                                <img src="{% static 'img/junior.png' %}" alt="" class="img-fluid avatar rounded-circle">
+                                <img src="{% static 'img/celia.png' %}" alt="" class="img-fluid avatar rounded-circle">
+                            </div>
+                            <div class="d-flex ml-auto">
+                                <span class="badge badge-secondary align-self-center">Assister <i class="far fa-check-circle ml-2"></i></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+
+
+
+
+
+{% endblock %}
+
+
+
+
+
+
+{% block javascript %}
+    
+{% endblock %}

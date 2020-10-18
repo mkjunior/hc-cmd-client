@@ -1,0 +1,42 @@
+{% extends 'basedash.html' %}
+
+{% load static %}
+
+
+{% block title %} Produit {% endblock %}
+
+
+{% block link_css %}
+<link rel="stylesheet" href="{% static 'css/produit.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<div class="row">
+    <div class="col-md">
+        <div class="card card-body">
+            <h5>Produits</h5>
+        </div>
+        <div class="card card-body">
+            <table class="table">
+
+                <tr>
+                    <th>Produit</th>
+                    <th>Catégorie</th>
+                    <th>Prix</th>
+                </tr>
+
+                {% for i in produits %}
+                    <tr>
+                        <td>{{i.nom}}</td>
+                        <td>{{i.categorie}}</td>
+                        <td>{{i.prix}}</td>
+                    </tr>
+                {% endfor %}
+
+            </table>
+        </div>
+    </div>
+</div>
+
+{% endblock%}

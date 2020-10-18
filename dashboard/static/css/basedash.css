@@ -1,0 +1,37 @@
+.entete {
+    margin-bottom: 45px;
+}
+
+.logo {
+    width: 80px;
+    height: 40px;
+}
+
+body {
+    background-color: #ebeff5;
+}
+
+#total-orders{
+    background-color: #c37fc5;
+}
+
+#orders-delivered {
+    background-color: #4a4cc9;
+}
+
+#orders-pending {
+    background-color: #7cd1c0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,127 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>{% block title %}{% endblock %}</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" href="#">
+
+    <!-- Inclusion des fichier bootstrap -->
+    <link 
+    rel="stylesheet"
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+    crossorigin="anonymous">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/1.6.0/css/lightgallery.min.css" rel="stylesheet">
+    
+	<!--<link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}">-->
+	<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+	<!-- inclusion des fichiers css -->
+	<link rel="stylesheet" href="{% static 'css/basedash.css' %}">
+    {% block link_css %} {% endblock %}
+
+    <!-- inclusion des fichiers js -->
+    {% block link_js %} {% endblock %}
+
+</head>
+
+
+<body>
+
+
+<!-- Debut entete -->
+
+<!-- /header -->
+
+<!-- Fin header -->
+
+<!-- Fin entete -->
+
+
+<div id="content-wrapper" class="d-flex">
+
+    <div id="sidebar-container" class="bg-light border-right">
+        <div class="logo">
+            <h4 class="font-weight-bold mb-0">BOUTIQUE</h4>
+        </div>
+        <div class="menu list-group-flush">
+            <a href="#" class="list-group-item list-group-item-action bg-light p-3 border-0">
+                <i class="fas fa-dice-d6"></i>Tableau de bord</a>
+            <a href="#" class="list-group-item list-group-item-action bg-light p-3 border-0">
+                <i class="fas fa-user-friends"></i>Utilisateurs</a>
+            <a href="#" class="list-group-item list-group-item-action bg-light p-3 border-0">
+                <i class="fas fa-chart-line"></i>Statitiques</a>
+            <a href="#" class="list-group-item list-group-item-action bg-light p-3 border-0">
+                <i class="fas fa-calendar-alt"></i>Evenements</a>
+            <a href="#" class="list-group-item list-group-item-action bg-light p-3 border-0">
+                <i class="fas fa-user"></i>Profil</a>
+            <a href="#" class="list-group-item list-group-item-action bg-light p-3 border-0">
+                <i class="fas fa-cogs"></i>Configuration</a>
+        </div>
+    </div>
+
+    <div id="page-container" class="w-100 bg-light-blue">
+
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+                </button>
+            
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'dashboard:dashboard' %}">Dashboard</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                MK Junior </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="#">Mon profil</a>
+                                <a class="dropdown-item" href="#">Parametres</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#">Deconnexion</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        
+        {% block content %} {% endblock %}
+
+    </div>
+
+</div>
+
+
+
+<!-- Debut footer -->
+
+<!-- Fin footer -->
+
+
+</body>
+
+{% block javascript %} {% endblock %}
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.5.0.slim.min.js"></script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.3.3/umd/popper-base.min.js"></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+
+<script src="https://res.cloudinary.com/dxfq3iotg/raw/upload/v1556817331/lightgallery-all.min.js"></script>
+
+<script type="text/javascript"
+src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" 
+integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" 
+crossorigin="anonymous"></script>
+</html>

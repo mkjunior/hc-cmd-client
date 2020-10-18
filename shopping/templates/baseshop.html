@@ -1,0 +1,256 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>{% block title %}{% endblock %}</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" href="#">
+
+    <!-- Inclusion des fichier bootstrap -->
+    <link 
+    rel="stylesheet"
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+    crossorigin="anonymous">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/1.6.0/css/lightgallery.min.css" rel="stylesheet">
+    
+	<!--<link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}">-->
+	<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+	<!-- inclusion des fichiers css -->
+	<link rel="stylesheet" href="{% static 'css/baseshop.css' %}">
+    {% block link_css %} {% endblock %}
+
+    <!-- inclusion des fichiers js -->
+    <script src="{% static 'js/baseshop.js' %}"></script>
+    {% block link_js %} {% endblock %}
+
+</head>
+
+
+<body>
+
+
+<!-- Debut entete -->
+
+<div class="super_container">
+    <!-- Header -->
+    <header class="header">
+        <!-- Top Bar -->
+        <div class="top_bar">
+            <div class="container">
+                <div class="row">
+                    <div class="col d-flex flex-row">
+                        <div class="top_bar_contact_item">
+                            <i class="fas fa-phone-square"></i><a href="#">+237 233 132 111</a>
+                        </div>
+                        <div class="top_bar_contact_item">
+                            <i class="fas fa-envelope-square"></i><a href="mailto:mbonguekj@gmail.com">contact@hellocity.cm</a>
+                        </div>
+                        <div class="d-flex ml-auto">
+                            <div class="top_bar_menu">
+                                <ul class="standard_dropdown top_bar_dropdown">
+                                    <li> <a href="#">Français<i class="fas fa-chevron-down"></i></a>
+                                        <ul>
+                                            <li><a href="#">English</a></li>
+                                        </ul>
+                                    </li>
+                                    <li> <a href="#">F CFA<i class="fas fa-chevron-down"></i></a>
+                                        <ul>
+                                            <li><a href="#">EUR Euro</a></li>
+                                            <li><a href="#">$ US dollar</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="top_bar_user">
+                                <a href="#">MK Junior</a><i class="fas fa-user"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> 
+        <!-- Header Main -->
+        <div class="header_main">
+            <div class="container p-0">
+                <div class="row">
+                    <!-- Logo -->
+                    <div class="col-lg-2 col-sm-3 col-3 order-1">
+                        <div class="logo_container">
+                            <div class="logo">
+                                <a href='https://www.hellocity.cm'><img src="{% static 'img/logo123.png' %}" /></a>
+                            </div>
+                        </div>
+                    </div> 
+                    <!-- Search -->
+                    <div class="col-lg-6 col-12 order-lg-2 order-3 text-lg-left text-right">
+                        <div class="header_search">
+                            <div class="header_search_content">
+                                <div class="header_search_form_container">
+                                    <form action="#" class="header_search_form clearfix"> 
+                                        <input type="search" required="required" class="header_search_input" placeholder="Recherche de produits...">
+                                        <div class="custom_dropdown">
+                                            <div class="custom_dropdown_list"> 
+                                                <span class="custom_dropdown_placeholder clc">All Categories</span> <i class="fas fa-chevron-down"></i>
+                                                <ul class="custom_list clc">
+                                                    <li><a class="clc" href="#">All Categories</a></li>
+                                                    <li><a class="clc" href="#">Computers</a></li>
+                                                    <li><a class="clc" href="#">Laptops</a></li>
+                                                    <li><a class="clc" href="#">Cameras</a></li>
+                                                    <li><a class="clc" href="#">Hardware</a></li>
+                                                    <li><a class="clc" href="#">Smartphones</a></li>
+                                                </ul>
+                                            </div>
+                                        </div> 
+                                        <button type="submit" class="header_search_button trans_300" value="Submit"><i class="fas fa-search"></i></button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div> 
+                    <!-- Wishlist -->
+                    <div class="col-lg-4 col-9 order-lg-3 order-2 text-lg-left text-right">
+                        <div class="wishlist_cart d-flex flex-row align-items-center justify-content-end">
+                            <div class="wishlist d-flex flex-row align-items-center justify-content-end">
+                                <div class="wishlist_icon"><img src="https://res.cloudinary.com/dxfq3iotg/image/upload/v1560918681/heart.png" alt=""></div>
+                                <div class="wishlist_content">
+                                    <div class="wishlist_text"><a href="#">Souhaits</a></div>
+                                    <div class="wishlist_count">10</div>
+                                </div>
+                            </div> <!-- Cart -->
+                            <div class="cart">
+                                <div class="cart_container d-flex flex-row align-items-center justify-content-end">
+                                    <div class="cart_icon"> <img src="https://res.cloudinary.com/dxfq3iotg/image/upload/v1560918704/cart.png" alt="">
+                                        <div class="cart_count"><span>3</span></div>
+                                    </div>
+                                    <div class="cart_content">
+                                        <div class="cart_text"><a href="#">Panier</a></div>
+                                        <div class="cart_price">18500 F cfa</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> 
+        <!-- Main Navigation -->
+        <nav class="main_nav">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <div class="main_nav_content d-flex flex-row">
+                            <!-- Categories Menu -->
+                            <!-- Main Nav Menu -->
+                            <div class="main_nav_menu">
+                                <ul class="standard_dropdown main_nav_dropdown">
+                                    <li onclick="showBlue(this)">
+                                        <a href="{% url 'shopping:accueil' %}">Accueil</a>
+                                    </li>
+                                    <li class="hassubs" onclick="showBlue(this)"> 
+                                        <a href="{% url 'shopping:shopping' %}">Commandes</a>
+                                    </li>
+                                    <li class="hassubs" onclick="showBlue(this)"> 
+                                        <a href="{% url 'shopping:wishes' %}">Liste des envies</a>
+                                    </li>
+                                    <li class="hassubs" onclick="showBlue(this)"> 
+                                        <a href="{% url 'shopping:magasin' %}">Mes magasins favoris</a>
+                                    </li>
+                                    <li onclick="showBlue(this)">
+                                        <a href="{% url 'shopping:setting' %}">Paramètres de mon compte</a>
+                                    </li>
+                                    <li onclick="showBlue(this)">
+                                        <a href="{% url 'shopping:contact' %}">Contact</a>
+                                    </li>
+                                </ul>
+                            </div> 
+                            <!-- Menu Trigger -->
+                            <div class="menu_trigger_container ml-auto">
+                                <div class="menu_trigger d-flex flex-row align-items-center justify-content-end">
+                                    <div class="menu_burger">
+                                        <div class="menu_trigger_text">menu</div>
+                                        <div class="cat_burger menu_burger_inner"><span></span><span></span><span></span></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    
+    <div class="wrapper d-flex">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <ul style="margin-top: 25px;">
+                <li>
+                    <a href="www.hellocity.cm"><i class="fas fa-home"></i>Hello City</a>
+                </li>
+                <li>
+                    <a href="#"><i class="fas fa-gift"></i>Mes coupons</a>
+                </li>
+                <li>
+                    <a href="#"><i class="fas fa-trash-alt"></i>Commandes supprimées (3)</a>
+                </li>
+                <li>
+                    <a href="#"><i class="far fa-envelope"></i>Messagerie (7)</a>
+                </li>
+                <li>
+                    <a href="#"><i class="fas fa-signal"></i>Reports</a>
+                </li>
+            </ul>
+            <p class="myproject px-3">GESTION</p>
+            <ul>
+                <li><a href="{% url 'shopping:litige' %}">Contestations et remboursements</a></li>
+                <li><a href="{% url 'shopping:guideuser' %}">Guide d'utilisation client</a></li>
+                <li><a href="https://www.hellocity.cm/faq.html">F A Q</a></li>
+            </ul>
+        </div>
+        <!-- Contenu -->
+        <div class="super_contenu">
+            {% block contenu %}  {% endblock %}
+        </div>  
+
+    </div>
+    
+
+</div>
+
+<!-- Fin entete -->
+
+
+
+
+
+
+
+<!-- Debut footer -->
+
+<!-- Fin footer -->
+
+
+</body>
+
+{% block javascript %} {% endblock %}
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.5.0.slim.min.js"></script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.3.3/umd/popper-base.min.js"></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+
+<script src="https://res.cloudinary.com/dxfq3iotg/raw/upload/v1556817331/lightgallery-all.min.js"></script>
+
+<script type="text/javascript"
+src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" 
+integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" 
+crossorigin="anonymous"></script>
+</html>
